@@ -1,0 +1,24 @@
+* {
+  text-align: center;
+  font-family: 'Tiffany', arial;
+  font-size: 30px;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+    color: #255A97;  
+}
+
+textarea {
+  box-sizing: border-box;
+  width: 80%;
+}
+
+button {
+  padding: 10px;
+  color: #255A97; 
+}
