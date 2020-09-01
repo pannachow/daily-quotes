@@ -15,10 +15,23 @@ class App extends React.Component {
     this.state = {
       quotes: [
         {
-          id: "lalala",
+          id: "1",
           text: "Do Not Let Yesterday Take Up Too Much Of Today.",
-          backgroundColor: "#81D8D0"
+          color: "white",
+          backgroundColor: "#81D8D0",
         },
+        {
+          id: "2",
+          text: "The purpose of art is washing the dust of daily life off our souls.",
+          color: "orange",
+          backgroundColor: "yellow"
+        },
+        {
+          id: "3",
+          text: "If You Are Working On Something That You Really Care About, You Do Not Have To Be Pushed. The Vision Pulls You.",
+          color: "darkblue",
+          backgroundColor: "lightblue"
+        }
       ]
     };
   }
@@ -35,7 +48,7 @@ class App extends React.Component {
 
   deleteQuote(quote) {
     this.setState({
-      quotes: this.state.quotes.filter(quote => quote.id !== quote.id)
+      quotes: this.state.quotes.filter(q => q.id !== quote.id)
     })
   }
 

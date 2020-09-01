@@ -1,11 +1,57 @@
+.AdminView {
+  color: #255A97;
+  font-size: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
 .horizontal-2 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
+  text-align: left;
 }
 
 .horizontal-1 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   margin-bottom: 20px;
+  text-align: center;
+}
+
+.center {
+  margin: auto;
+}
+
+.user-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-decoration: none;
+}
+
+button {
+  background-color: #7161C1;
+  color: white;
+  border-radius: 50%;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  width: 100px;
+  height: 70px;
+  border-color: white;
+}
+
+button:hover {
+  border-radius: 3px;
+  background-color: white;
+  color: #0A56B0;
+  border: 2px solid #3682f4;
+}
+
+textarea {
+  box-sizing: border-box;
+  width: 70%;
+  height: 70%;
 }
