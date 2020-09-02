@@ -6,6 +6,11 @@
   width: 100%;
   text-align: center;
   font-size: 18px;
+  transition: background-color 1s ease;
+}
+
+.quote {
+  transition: color 1s ease;
 }
 
 .admin-link {
