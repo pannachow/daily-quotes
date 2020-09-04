@@ -13,7 +13,9 @@ class AdminView extends React.Component {
     }
 
     addQuote() {
+        const nextId = Math.max(...this.props.quotes.map(q => q.id)) + 1;
         this.props.addQuote({
+            id: nextId,
             text: this.textRef.current.value,
             backgroundColor: this.backgroundColorRef.current.state.hex,
             color: this.colorRef.current.state.hex,
@@ -32,7 +34,7 @@ class AdminView extends React.Component {
                 <h1>Daily Quotes</h1>
 
                 {this.props.quotes.map(quote => (
-                    <div className="horizontal-1">
+                    <div key={quote.id} className="horizontal-1">
                         <p style={{ color: quote.color, backgroundColor: quote.backgroundColor }}>
                             {quote.text}
                         </p>

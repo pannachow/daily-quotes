@@ -27,9 +27,10 @@ h1 {
 
 .user-link {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 8px;
+  right: 0;
   text-decoration: none;
+  transform: rotate(45deg);
 }
 
 button {
