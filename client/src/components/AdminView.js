@@ -3,7 +3,6 @@ import { SketchPicker } from "react-color";
 import "./AdminView.css";
 import { Link } from "react-router-dom";
 
-
 class AdminView extends React.Component {
     constructor(props) {
         super(props);
@@ -12,18 +11,16 @@ class AdminView extends React.Component {
         this.backgroundColorRef = React.createRef();
     }
 
-    addQuote() {
-        const nextId = Math.max(...this.props.quotes.map(q => q.id)) + 1;
-        this.props.addQuote({
-            id: nextId,
+    async addQuote() {
+        await this.props.addQuote({
             text: this.textRef.current.value,
             backgroundColor: this.backgroundColorRef.current.state.hex,
             color: this.colorRef.current.state.hex,
         });
     }
 
-    deleteQuote(quote) {
-        this.props.deleteQuote(quote);
+    async deleteQuote(quote) {
+        await this.props.deleteQuote(quote);
     }
 
     render() {
