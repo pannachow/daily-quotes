@@ -52,11 +52,13 @@ class App extends React.Component {
       <Router>
         <Switch>
           <Route path="/admin">
+            <div style={{paddingLeft: "50px"}}>
             <AdminView
               quotes={this.state.quotes}
               addQuote={quote => this.addQuote(quote)}
               deleteQuote={quote => this.deleteQuote(quote)}
             />
+            </div>
           </Route>
           <Route path="/">
             <UserView quotes={this.state.quotes} />

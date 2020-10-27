@@ -1,7 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { SketchPicker } from "react-color";
 import "./AdminView.css";
-import { Link } from "react-router-dom";
 
 class AdminView extends React.Component {
     constructor(props) {
@@ -28,33 +28,41 @@ class AdminView extends React.Component {
             <div className="AdminView">
                 <Link to="/" className="user-link">user</Link>
 
-                <h1>Daily Quotes</h1>
+                <div className="grid">
+                    <h1 className="grid-item-4" >Daily Quotes</h1>
 
-                {this.props.quotes.map(quote => (
-                    <div key={quote.id} className="horizontal-1">
-                        <p style={{ color: quote.color, backgroundColor: quote.backgroundColor }}>
-                            {quote.text}
-                        </p>
-                        <button className="center" onClick={() => this.deleteQuote(quote)}>Delete</button>
-                    </div>
-                ))}
-                
-                <h1>Add New Quote</h1>
+                    {this.props.quotes.map(quote => (
+                        <>
+                            <div key={quote.id} className="grid-item-3" style={{ backgroundColor: quote.backgroundColor, padding: "10px" }}>
+                                <p style={{ color: quote.color }} >
+                                    {quote.text}
+                                </p>
+                            </div>
+                            <div className="grid-item-1">
+                                <button className="center" onClick={() => this.deleteQuote(quote)}>Delete</button>
+                            </div>
+                        </>
+                    ))}
 
-                <div className="horizontal-2">
-                    <label>
+                    <br />
+                    <br />
+                    <br />
+
+                    <h1 className="grid-item-4">Add New Quote</h1>
+
+                    <label className="grid-item-1">
                         Type Your Quotes Here
-                        <textarea ref={this.textRef} />
+                            <textarea ref={this.textRef} />
                     </label>
-                    <label>
+                    <label className="grid-item-1">
                         Background Color
-                        <SketchPicker ref={this.backgroundColorRef} />
+                            <SketchPicker className="center" ref={this.backgroundColorRef} />
                     </label>
-                    <label>
+                    <label className="grid-item-1">
                         Quotes Color
-                        <SketchPicker ref={this.colorRef} />
+                            <SketchPicker className="center" ref={this.colorRef} />
                     </label>
-                    <button onClick={() => this.addQuote()}>Add</button>
+                    <button className="grid-item-1 center" onClick={() => this.addQuote()}>Add</button>
                 </div>
             </div>
         );
