@@ -1,8 +1,18 @@
-* {
-  font-family: 'Tiffany', arial;
+@font-face {
+  font-family: "Tiffany";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Tiffany"), local("Tiffany-Light"),
+    url("./fonts/tiffany.woff") format("woff");
 }
 
-html, body, #root {
+* {
+  font-family: "Tiffany", arial;
+}
+
+html,
+body,
+#root {
   height: 100%;
   margin: 0;
 }
