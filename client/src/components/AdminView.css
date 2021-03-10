@@ -17,7 +17,7 @@ h1 {
   background-color: black;
   transform: rotate(-45deg);
   transform-origin: 60px 60px;
-  position: absolute;
+  position: fixed;
   top: -60px;
   left: -60px;
 }
