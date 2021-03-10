@@ -5,7 +5,7 @@ const Router = require('koa-router');
 const mysql = require('mysql2/promise');
 require('dotenv').config();
 
-const PORT = 3001;
+const port = parseInt(process.env.PORT || '3001');
 
 const app = new Koa();
 const router = new Router();
@@ -46,6 +46,6 @@ app
     })
     .use(router.routes())
     .use(router.allowedMethods())
-    .listen(PORT);
+    .listen(port);
 
-console.log(`Listening on port ${PORT}`);
+console.log(`Listening on port ${port}`);
