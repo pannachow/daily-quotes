@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
@@ -8,7 +8,11 @@ import AdminView from "./components/AdminView";
 import UserView from "./components/UserView";
 import "./App.css";
 
-const API_URL = "http://localhost:3001/quote";
+const BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:3001";
+
+function fetchApi(url, options) {
+  return fetch(BASE_URL + url, options);
+}
 
 class App extends React.Component {
   constructor(props) {
@@ -19,14 +23,14 @@ class App extends React.Component {
   }
 
   async componentDidMount() {
-    const res = await fetch(API_URL);
+    const res = await fetchApi("/quote");
     this.setState({
       quotes: await res.json(),
     });
   }
 
   async addQuote(quote) {
-    const res = await fetch(API_URL, {
+    const res = await fetchApi("/quote", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -39,7 +43,7 @@ class App extends React.Component {
   }
 
   async deleteQuote(quote) {
-    await fetch(`${API_URL}/${quote.id}`, {
+    await fetchApi(`/quote/${quote.id}`, {
       method: "DELETE",
     })
     this.setState({

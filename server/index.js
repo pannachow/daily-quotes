@@ -36,7 +36,7 @@ app
             host: process.env.DB_HOST,
             user: process.env.DB_USER,
             password: process.env.DB_PASSWORD,
-            database: 'quotes',
+            database: process.env.DB_NAME || 'quotes',
         });
         ctx.connection = connection;
         await next();
