@@ -1,5 +1,5 @@
 .AdminView {
-  color: #255A97;
+  color: #255a97;
   font-size: 20px;
 }
 
@@ -11,16 +11,29 @@ h1 {
   margin: auto;
 }
 
+.user-link-container {
+  width: 120px;
+  height: 120px;
+  background-color: black;
+  transform: rotate(-45deg);
+  transform-origin: 60px 60px;
+  position: absolute;
+  top: -60px;
+  left: -60px;
+}
+
 .user-link {
   position: absolute;
-  top: 8px;
+  bottom: 10px;
+  left: 0;
   right: 0;
+  color: white;
   text-decoration: none;
-  transform: rotate(45deg);
+  text-align: center;
 }
 
 button {
-  background-color: #7161C1;
+  background-color: #7161c1;
   color: white;
   border-radius: 50%;
   font-size: 16px;
@@ -33,7 +46,7 @@ button {
 button:hover {
   border-radius: 3px;
   background-color: white;
-  color: #0A56B0;
+  color: #0a56b0;
   border: 2px solid #3682f4;
 }
 

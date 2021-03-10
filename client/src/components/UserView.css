@@ -13,11 +13,23 @@
   transition: color 1s ease;
 }
 
-.admin-link {
-  position: absolute;
-  top: 12px;
-  right: 0;
-  text-decoration: none;
+.admin-link-container {
+  width: 120px;
+  height: 120px;
+  background-color: black;
   transform: rotate(45deg);
+  transform-origin: 60px 60px;
+  position: absolute;
+  top: -60px;
+  right: -60px;
 }
 
+.admin-link {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}

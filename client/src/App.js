@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  HashRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import AdminView from "./components/AdminView";
 import UserView from "./components/UserView";
 import "./App.css";
@@ -45,10 +41,10 @@ class App extends React.Component {
   async deleteQuote(quote) {
     await fetchApi(`/quote/${quote.id}`, {
       method: "DELETE",
-    })
+    });
     this.setState({
-      quotes: this.state.quotes.filter(q => q.id !== quote.id),
-    })
+      quotes: this.state.quotes.filter((q) => q.id !== quote.id),
+    });
   }
 
   render() {
@@ -56,12 +52,12 @@ class App extends React.Component {
       <Router>
         <Switch>
           <Route path="/admin">
-            <div style={{paddingLeft: "50px"}}>
-            <AdminView
-              quotes={this.state.quotes}
-              addQuote={quote => this.addQuote(quote)}
-              deleteQuote={quote => this.deleteQuote(quote)}
-            />
+            <div style={{ paddingLeft: "50px" }}>
+              <AdminView
+                quotes={this.state.quotes}
+                addQuote={(quote) => this.addQuote(quote)}
+                deleteQuote={(quote) => this.deleteQuote(quote)}
+              />
             </div>
           </Route>
           <Route path="/">
@@ -69,7 +65,7 @@ class App extends React.Component {
           </Route>
         </Switch>
       </Router>
-    )
+    );
   }
 }
 export default App;
